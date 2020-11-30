@@ -1,0 +1,36 @@
+{% extends "companys/company_base.html" %}
+
+{% block precompany %}
+<div class="container">
+  <h1>{{company.name}}</h1>
+  <h2> {{ company.description_html|safe }}</h2>
+
+  <div class="content">
+	{% if user.is_authenticated %}
+
+  		{% if user in company.members.all %}
+  			<a href="{% url 'companys:leave' slug=company.slug %}" class="btn btn-lg btn-warning"><span class="fa fa-times-circle-o"></span> Leave</a>
+  		{% else %}
+  			<a href="{% url 'companys:join' slug=company.slug %}" class="btn btn-lg btn-warning"><span class="fa fa-check-circle-o"></span> Apply</a>
+		  {% endif %}
+	{% endif %}
+
+  </div>
+</div>
+{% endblock %}
+
+{% block company_content %}
+
+<div class="col-md-8">
+	{% if company.posts.count == 0 %}
+	<h2>No posts in this company yet!</h2>
+
+	{% else %}
+		<!-- include is similar to extend just used to extend but in middle of html file -->
+		{% for post in company.posts.all %}
+			{% include "posts/_post.html" %}
+		{% endfor %}
+
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    {% block precompany %}{% endblock %}
+    {% block company_content %}{% endblock %}
+    {% block postcompany %}{% endblock %}
+  </div>
+</div>
+
+{% endblock %}

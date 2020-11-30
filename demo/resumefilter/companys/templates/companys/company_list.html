@@ -1,0 +1,38 @@
+{% extends "companys/company_base.html" %}
+
+{% block precompany %}
+<div class="col-md-4">
+	<div class="content">
+		{% if user.is_authenticated %}
+		<h2>
+			Welcome back
+			<a href="{% url 'posts:for_user' username=user.username %}">@{{user.username }}</a>
+		</h2>
+
+    {% endif %}
+			<h2>Companies</h2>
+
+			<p>Welcome to the Companies Page! <br>Select a Company with a shared interest!</p>
+	</div>
+	{% if user.is_authenticated %}
+	<!-- Create a global application -->
+	<a href="{% url 'companys:create' %}" class="btn btn-warning" role="button"><span class="fa fa-plus"></span> Apply to a New Company!</a>
+	{% endif %}
+</div>
+{% endblock %}
+
+{% block company_content %}
+<div class="col-md-8">
+	<div class="list-company">
+		{% for company in object_list %}
+		<a href="{% url 'companys:single' slug=company.slug %}"
+		class="list-company-item list-company-item-action flex-column align-items-start">
+			<h3 class="mb-1">{{ company.name }}</h3>
+			<p class="mb-1">{{ company.description_html|safe }}</p> 			
+			<!-- Html code is a safe way -->
+		</a>
+
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

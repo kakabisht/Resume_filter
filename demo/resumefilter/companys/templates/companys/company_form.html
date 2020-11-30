@@ -1,0 +1,15 @@
+{% extends "companys/company_base.html" %}
+{% load bootstrap4 %}
+
+{% block company_content %}
+<div class="container">
+  <h4>Create A New Group</h4>
+  <form method="POST" action="{% url 'companys:create' %}" id="companyForm">
+  	{% csrf_token %}
+  	{% bootstrap_form form %}
+    {% buttons %}
+  		<button type="submit" class="btn btn-primary btn-large">Create</button>
+  	{% endbuttons %}
+  </form>
+</div>
+{% endblock %}

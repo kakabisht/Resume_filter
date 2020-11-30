@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="{% static 'resumefilter/css/master.css'%}">
+  <title>Resume Filter</title>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <section class="hero">
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-light navbar-toggleable-sm" style="background-color: #e3f2fd; ">
+          <!-- <a href="#" class="navbar-brand mb-0">Resume Filter</a> -->
+          <a class="navbar-brand mb-0" href="{% url 'home' %}" class="btn btn-simple">Resume Filter</a>
+
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#headerNav" aria-controls="headerNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div id="headerNav" class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+              <div class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                  <a class="nav-item nav-link" href="{% url 'about' %}" class="btn btn-simple">About</a>
+                  <a class="nav-item nav-link" href="{% url 'posts:create' %}" class="btn btn-simple">Post</a>
+                  <a class="nav-item nav-link" href="{% url 'companys:all' %}" class="btn btn-simple">Companies</a>
+                  <a class="nav-item nav-link" href="{% url 'companys:create' %}" class="btn btn-simple">Create Company</a>
+                  <a class="nav-item nav-link" href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a>
+                {% else %}
+                  <a class="nav-item nav-link" href="{% url 'about' %}" class="btn btn-simple">About</a>
+                  <a class="nav-item nav-link" href="{% url 'companys:all' %}"class="btn btn-simple">Companies</a>
+                  <a class="nav-item nav-link" href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a>
+                  <a class="nav-item nav-link" href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a>
+                {% endif %}
+              </div>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+  </section>
+
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <div class="container mycontent">
+    {% block content %}
+      {% if user.is_authenticated %}
+        <p> Hello User</p>
+      {% endif %}
+    {% endblock %}
+  </div>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <ul class="list-inline mb-0 text-center">
+        <li class="list-inline-item">
+          <p>Developed by <a href="https://hridyesh.herokuapp.com/">Hridyesh Singh Bisht</a> </p>  
+        </li>
+        <li class="list-inline-item">
+          <a href="https://twitter.com/hridyesh_bisht"><span class="fa fa-twitter"></span></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="mailto:hridyesh.bisht.btech2018@sitpune.edu.in"><span class="fa fa-envelope-o"></span></a>
+        </li>
+        <p></p>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src="{% static "resumefilter/JS/script.js"%}" type="text/javascript" ></script>
+
+</body>
+</html>
