@@ -13,8 +13,13 @@ User = get_user_model()
 
 class Post(models.Model):
     user = models.ForeignKey(User, related_name="posts",on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now=True)
-    message = models.TextField()
+    email = models.EmailField(max_length=254)
+    github=models.URLField(max_length=254,blank=True)
+    linkedin=models.URLField(max_length=254,blank=True)
+    portfolio_site=models.URLField(max_length=254,blank=True)
+    resume=models.FileField(upload_to='users/%Y/%m/%d/', blank=True)
+    voice=models.FileField(upload_to='users/%Y/%m/%d/', blank=True)
+    message = models.TextField(max_length=254)
     message_html = models.TextField(editable=False)
     group = models.ForeignKey(Group, related_name="posts",null=True, blank=True,on_delete=models.CASCADE)
 
@@ -35,5 +40,4 @@ class Post(models.Model):
         )
 
     class Meta:
-        ordering = ["-created_at"]
         unique_together = ["user", "message"]

@@ -30,5 +30,7 @@ urlpatterns = [
     path('posts/', include("posts.urls", namespace="posts")),
     path('groups/',include("groups.urls", namespace="groups")),
     path('companys/',include("companys.urls", namespace="companys")),
+    path('applications/', include("applications.urls", namespace="applications")),
+
 
 ]

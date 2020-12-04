@@ -1,0 +1,42 @@
+{% extends "applications/application_base.html" %}
+{% load humanize %}
+
+{% block pre_post_application %}
+<div class="col-md-4">
+	{% if request.user.is_authenticated %}
+	<div class="card card-with-shadow">
+		<div class="content">
+			<h5 class="title">Your Companies</h5>
+			<ul class="list-unstyled">
+
+				{% for member_company in get_user_companys %}
+				<li class="company li-with-bullet">
+					<a href="{% url 'companys:single' slug=member_company.company.slug %}">{{ member_company.company.name }}</a>
+				</li>
+				{% endfor %}
+
+			</ul>
+		</div>
+	</div>
+	{% endif %}
+	<div class="card card-with-shadow">
+		<div class="content">
+			<h5 class="title">All Companies</h5>
+			<ul class="list-unstyled">
+				{# {% get_other_groups as other_groups %} #}
+				{% for other_company in get_other_companys %}
+					<li class="company li-with-bullet"><a href="{% url 'companys:single' slug=other_company.slug %}">{{ other_company.name }}</a></li>
+				{% endfor %}
+			</ul>
+
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block post_application %}
+<div class="col-md-8">
+	{% for application in application_list %}
+  {% include "applications/_application.html" %}
+	{% endfor %}
+</div>
+{% endblock %}

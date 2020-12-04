@@ -1,0 +1,23 @@
+<div class="media">
+	<h3 class="mr-5"><a href="{% url 'applications:for_user' username=application.user.username %}">@{{ application.user.username }}</a></h3>
+
+	<div class="media-body">
+		<strong>{{ application.user.username }}</strong>
+		<h5>{{ application.email }}</h5>
+		<h5>{{ application.message_html|safe }}</h5>
+			<time class="time"><a href="{% url 'applications:single' username=application.user.username pk=application.pk %}">{{ application.created_at }}</a></time>
+			{% if application.company %}
+			<span class="company-name">in <a href="#">{{ application.company.name }}</a></span>
+			{% endif %}
+		</h5>
+
+		<div class="media-footer">
+			{% if user.is_authenticated and application.user == user and not hide_delete %}
+				<a href="{% url 'applications:delete' pk=application.pk %}" title="delete" class="btn btn-simple">
+					<span class="fa fa-remove text-danger" aria-hidden="true"></span>
+					<span class="text-danger icon-label">Delete</span>
+				</a>
+			{% endif %}
+		</div>
+	</div>
+</div>

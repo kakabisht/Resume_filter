@@ -1,0 +1,14 @@
+{% extends "applications/application_base.html" %}
+
+{% load bootstrap4 %}
+
+{% block application_content %}
+<h4>Create New Application</h4>
+<form method="POST" action="{% url 'applications:create' %}" id="postForm" enctype ="multipart/form-data">
+	{% csrf_token %}
+	{% bootstrap_form form %}
+	{% buttons %}
+		<button type="submit" class="btn btn-primary btn-large">Post</button>
+	{% endbuttons %}
+</form>
+{% endblock %}

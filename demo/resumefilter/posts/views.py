@@ -58,7 +58,7 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     To create a post
     '''
     # form_class = forms.PostForm
-    fields = ('message','group')
+    fields = "__all__"
     model = models.Post
 
     # def get_form_kwargs(self):

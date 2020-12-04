@@ -3,6 +3,7 @@
 
 	<div class="media-body">
 		<strong>{{ post.user.username }}</strong>
+		<h5>{{ post.user.email }}</h5>
 		<h5>{{ post.message_html|safe }}</h5>
 			<time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
 			{% if post.company %}

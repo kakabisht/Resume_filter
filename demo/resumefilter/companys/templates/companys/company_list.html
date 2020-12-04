@@ -6,7 +6,7 @@
 		{% if user.is_authenticated %}
 		<h2>
 			Welcome back
-			<a href="{% url 'posts:for_user' username=user.username %}">@{{user.username }}</a>
+			<a href="{% url 'applications:for_user' username=user.username %}">@{{user.username }}</a>
 		</h2>
 
     {% endif %}
@@ -16,7 +16,7 @@
 	</div>
 	{% if user.is_authenticated %}
 	<!-- Create a global application -->
-	<a href="{% url 'companys:create' %}" class="btn btn-warning" role="button"><span class="fa fa-plus"></span> Apply to a New Company!</a>
+	<a href="{% url 'applications:create' %}" class="btn btn-warning" role="button"><span class="fa fa-plus"></span> Apply to a New Company!</a>
 	{% endif %}
 </div>
 {% endblock %}
