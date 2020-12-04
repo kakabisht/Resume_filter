@@ -1,4 +1,9 @@
 /* Resets */
+/* For the background color */
+.container{
+  background-color: #1D3461;
+}
+
 hr {
   margin-left: 0;
   max-width: 40px;
@@ -8,7 +13,9 @@ hr {
 .jumbotron {
   position: relative;
   background: url(https://source.unsplash.com/9Y8vxVQN4o4/1920x1080) no-repeat bottom center/cover;
+  background-color: #DB3069;
 }
+
 .jumbotron:before {
   position: absolute;
   content: '';

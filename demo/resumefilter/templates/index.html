@@ -1,35 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p> </p>
-    <div class="jumbotron jumbotron-fluid mb-0">
-
-    <h1 style="text-align:center">Welcome to Resume Filter Application</h1>
-    <p></p>
-    <p>
-        My aim is to simplify the resumer filtration process, add other various parameters apart from the usual resume fields 
-        such as voice sample which will include speech mood, articulation-rate, speech rate and number of filler words. 
-    </p>
-    <p></p>
-    <ol>
-        <li>Applicants can Sign up, log in and fill the resume application form of companies.</li>
-        <li>Recruiters can further view the resume application form data and sort them according to soft skills or hard skills or a combination of both.</li>
-        <li>Administrators can check the list of applicants, applicant’s forms and recruiters.</li>
-    </ol>
-    <h3> Resources refered</h3>
-    <ol>
-        <li><a href="https://programmerprodigy.code.blog/2020/07/09/basics-of-django-framework/">My Django Blog</a></li>
-        <li><a href="https://docs.djangoproject.com/en/3.1/intro/tutorial01/">Official Django Documentation</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django">Official Mozilla Documentation</a></li>
-    </ol>
-    <p></p>
-    <h3> API's Used</h3>
-    <ol>
-        <li><a href="https://docs.assemblyai.com/overview/getting-started">Voice analysis API</a></li>
-    </ol>
-    
-    <p style="text-align:center;"><img src="https://michaelgomes20705.files.wordpress.com/2015/07/untitled.jpg" alt="A Resume pun pic" style="width:500px;height:300px;"></p>
+    <div class="card">
+        <div class="card-body">
+            <div class="information" style="padding: 10px;">
+                <h1 style="text-align:center">Welcome to Resume Filter Application</h1>
+                <hr>
+                <br>
+                <p>
+                    My aim is to simplify the resumer filtration process, add other various parameters apart from the usual resume fields 
+                    such as voice sample which will include speech mood, articulation-rate, speech rate and number of filler words. 
+                </p>
+                <ol>
+                    <li>Applicants can Sign up, log in and fill the resume application form of companies.</li>
+                    <li>Recruiters can further view the resume application form data and sort them according to soft skills or hard skills or a combination of both.</li>
+                    <li>Administrators can check the list of applicants, applicant’s forms and recruiters.</li>
+                </ol>
+                <h3> Resources refered:</h3>
+                <ol>
+                    <li><a href="https://programmerprodigy.code.blog/2020/07/09/basics-of-django-framework/">My Django Blog.</a></li>
+                    <li><a href="https://docs.djangoproject.com/en/3.1/intro/tutorial01/">Official Django Documentation.</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django">Official Mozilla Documentation.</a></li>
+                </ol>
+                <p></p>
+                <h3> API's Used:</h3>
+                <ol>
+                    <li><a href="https://docs.assemblyai.com/overview/getting-started">Voice analysis API.</a></li>
+                    <li><a href="https://dandelion.eu/docs/api/datatxt/sent/v1/">Text analysis API.</a></li>
+                </ol>
+                
+                <p style="text-align:center;"><img src="https://michaelgomes20705.files.wordpress.com/2015/07/untitled.jpg" alt="A Resume pun pic" style="width:500px;height:300px;"></p>
+                
+                <h3> Future of the project:</h3>
+                <h5>I will use AWS Cloud Services to further improve my application,</h5>
+                <ol>
+                    <li><a href="https://aws.amazon.com/s3/?nc2=h_ql_prod_st_s3">Amazon Simple Storage Service (Amazon S3) for better scalability, data availability, security, and performance.</a></li>
+                    <li><a href="https://aws.amazon.com/transcribe/">AWS Transcrie for better voice and video analysis.</a></li>
+                    <li><a href="https://aws.amazon.com/comprehend/">Amazon Comprehend for natural language processing (NLP).</a></li>
+                </ol>
+            
+                </div>
+                
+                <p></p>        
+            </div>         
+        </div>
     </div>
-    
-    <p></p>
+
 {% endblock %}

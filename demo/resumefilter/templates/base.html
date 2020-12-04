@@ -9,14 +9,13 @@
   <title>Resume Filter</title>
 
 </head>
-<body>
+<body style="background-color: #1D3461;">
 <!-- partial:index.partial.html -->
-<div class="wrapper">
+<div class="wrapper" >
   <section class="hero">
     <header>
       <div class="container">
-        <nav class="navbar navbar-light navbar-toggleable-sm" style="background-color: #e3f2fd; ">
-          <!-- <a href="#" class="navbar-brand mb-0">Resume Filter</a> -->
+        <nav class="navbar navbar-light navbar-toggleable-sm" style="background-color: #CEEDF8; ">
           <a class="navbar-brand mb-0" href="{% url 'home' %}" class="btn btn-simple">Resume Filter</a>
 
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#headerNav" aria-controls="headerNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,11 +45,6 @@
     </header>
 
   </section>
-
-  <p></p>
-  <p></p>
-  <p></p>
-
   <div class="container mycontent">
     {% block content %}
       {% if user.is_authenticated %}
@@ -64,7 +58,7 @@
     <div class="container">
       <ul class="list-inline mb-0 text-center">
         <li class="list-inline-item">
-          <p>Developed by <a href="https://hridyesh.herokuapp.com/">Hridyesh Singh Bisht</a> </p>  
+          <p style="color: #ffffff;">Developed by <a href="https://hridyesh.herokuapp.com/">Hridyesh Singh Bisht</a> </p>  
         </li>
         <li class="list-inline-item">
           <a href="https://twitter.com/hridyesh_bisht"><span class="fa fa-twitter"></span></a>

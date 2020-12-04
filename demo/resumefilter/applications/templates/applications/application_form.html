@@ -3,12 +3,16 @@
 {% load bootstrap4 %}
 
 {% block application_content %}
-<h4>Create New Application</h4>
+<h2>Create New Application</h2>
+<h4> In the message text box, tell us why are you interessted in tech?  </h4>
 <form method="POST" action="{% url 'applications:create' %}" id="postForm" enctype ="multipart/form-data">
 	{% csrf_token %}
 	{% bootstrap_form form %}
 	{% buttons %}
-		<button type="submit" class="btn btn-primary btn-large">Post</button>
+	<div style="text-align: center">
+		<button type="submit" class="btn btn-primary btn-larg vertical-cente">Post</button>
+	</div>
+	<br>
 	{% endbuttons %}
 </form>
 {% endblock %}

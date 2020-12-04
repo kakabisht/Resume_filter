@@ -13,10 +13,7 @@
 
 		<div class="media-footer">
 			{% if user.is_authenticated and application.user == user and not hide_delete %}
-				<a href="{% url 'applications:delete' pk=application.pk %}" title="delete" class="btn btn-simple">
-					<span class="fa fa-remove text-danger" aria-hidden="true"></span>
-					<span class="text-danger icon-label">Delete</span>
-				</a>
+				<br>
 			{% endif %}
 		</div>
 	</div>

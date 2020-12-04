@@ -54,9 +54,9 @@ class ApplicationDetail(SelectRelatedMixin, generic.DetailView):
 
 class CreateApplication(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     # form_class = forms.ApplicationForm
-    fields = "__all__"
     model = models.Application
-
+    fields = ['user', 'company', 'email', 'github', 'linkedin', 'portfolio_site', 'resume', 'voice', 'message',]
+    
     # def get_form_kwargs(self):
     #     kwargs = super().get_form_kwargs()
     #     kwargs.update({"user": self.request.user})

@@ -4,7 +4,7 @@
 <div class="container">
   <h1>{{company.name}}</h1>
   <h2> {{ company.description_html|safe }}</h2>
-
+	<br>	
   </div>
 </div>
 {% endblock %}
@@ -22,5 +22,6 @@
 		{% endfor %}
 
 	{% endif %}
+	<br>
 </div>
 {% endblock %}

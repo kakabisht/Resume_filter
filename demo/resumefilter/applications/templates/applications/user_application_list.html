@@ -16,6 +16,7 @@
 				{% endfor %}
 
 			</ul>
+			<br>
 		</div>
 	</div>
 	{% endif %}
@@ -28,7 +29,7 @@
 					<li class="company li-with-bullet"><a href="{% url 'companys:single' slug=other_company.slug %}">{{ other_company.name }}</a></li>
 				{% endfor %}
 			</ul>
-
+			<br>
 		</div>
 	</div>
 </div>
@@ -38,5 +39,6 @@
 	{% for application in application_list %}
   {% include "applications/_application.html" %}
 	{% endfor %}
+	<br>
 </div>
 {% endblock %}

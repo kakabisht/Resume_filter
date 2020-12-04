@@ -1,19 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 <title>About us</title>
-<section id="sec-about" class="sec-about pt-5 pb-5">
-  <p></p>
-  <div class="jumbotron jumbotron-fluid mb-0">
-    <div class="row justify-content-center text-center">
-      <div class="col-md-10 col-lg-8">
-        <h1 class="h4">About project</h1>
-        <p class="mt-4 mb-4">This application aims to take soft skills(voice analysis) into account along with hard skills(resume) during the resume filtration process. 
-          The ultimate motive is to provide a better experience for our intended audience.
-          Our project will only be implemented as a software and will have no extra hardware needed.
-          </p>
-        <img src="https://files.realpython.com/media/The-Ultimate-Guide-To-Speech-Recognition-With-Python_Watermarked.c0511baf27ba.jpg" alt="An image analysis pic" style="width:500px;height:300px;"/>
+<section id="sec-about" class="">
+  <div class="card">
+    <div class="card-body">
+        <div class="information" style="padding: 10px;">
+          <div class="row justify-content-center text-center">
+            <div class="col-md-10 col-lg-8">
+              <h1 style="text-align:center">About project</h1>
+              <hr>
+              <p class="mt-4 mb-4">This application aims to take soft skills(voice analysis) into account along with hard skills(resume) during the resume filtration process. 
+                The ultimate motive is to provide a better experience for our intended audience.
+                Our project will only be implemented as a software and will have no extra hardware needed.
+                </p>
+              <img src="https://files.realpython.com/media/The-Ultimate-Guide-To-Speech-Recognition-With-Python_Watermarked.c0511baf27ba.jpg" alt="An image analysis pic" style="width:500px;height:300px;"/>
+            </div>
+          </div>
+          <br>
+          <h3>The Voice analysis API, returns:</h3>
+          <ol>   
+              <li>Confidence of the entire audio.</li>
+              <li>Speech to Text for the entire audio.</li>
+              <li>Audio_duration.</li>
+              <li>Start, End and Confidence of each word in the audio sample.</li>
+          </ol>
+          <br>
+          <h3>The Text analysis API, returns:</h3>
+          <ol>   
+              <li>The language used to analyze the input text.</li>
+              <li>Sentiment score: Strength of sentiment detected, from -1.0 (totally negative) to 1.0 (absolutely positive).</li>
+              <li>Sentiment type": Either 'positive', 'neutral' or 'negative'.</li>
+          </ol>
+          <p></p>
+        </div>
       </div>
     </div>
-  </section>
+</section>
     
 {% endblock %}

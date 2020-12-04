@@ -2,12 +2,19 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    {% block precompany %}{% endblock %}
-    {% block company_content %}{% endblock %}
-    {% block postcompany %}{% endblock %}
-  </div>
-</div>
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <h2 class="text-center">Company page</h2>
+      <hr>  
+      <br>
+      <div class="row">
+        {% block precompany %}{% endblock %}
+        {% block company_content %}{% endblock %}
+        {% block postcompany %}{% endblock %}
+      </div>
+    </div>
 
+  </div>
+</div>  
 {% endblock %}

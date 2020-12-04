@@ -4,15 +4,22 @@
 {% load bootstrap4 %}
 
 {% block content %}
-<div class="jumbotron jumbotron-fluid mb-0">
-  <h1>Login</h1>
-  <form method="POST" class="form">
-    <!-- CSRF token is used for security purposes -->
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons %}
-      <button type="submit" class="btn btn-primary">Login</button>
-    {% endbuttons %}
-  </form>
+<div class="card">
+  <div class="card-body">
+    <div class="information" style="padding: 10px;">
+      <h1 class="text-center">Login page</h2>
+      <hr>  
+      <br>     
+      <form method="POST" class="form">
+        <!-- CSRF token is used for security purposes -->
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+          <button type="submit" class="btn btn-primary">Login</button>
+        {% endbuttons %}
+      </form>
+
+    </div>  
+  </div>
 </div>
 {% endblock %}
