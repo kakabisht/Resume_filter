@@ -1,12 +1,14 @@
 {% extends "applications/application_base.html" %}
-
+<!-- exteding application_base.html -->
 {% load bootstrap4 %}
 
+<!-- inheriting into application_content -->
 {% block application_content %}
 <h2>Create New Application</h2>
 <h4> In the message text box, tell us why are you interessted in tech?  </h4>
 <form method="POST" action="{% url 'applications:create' %}" id="postForm" enctype ="multipart/form-data">
 	{% csrf_token %}
+	<!-- For security feature, csrf token is used -->
 	{% bootstrap_form form %}
 	{% buttons %}
 	<div style="text-align: center">

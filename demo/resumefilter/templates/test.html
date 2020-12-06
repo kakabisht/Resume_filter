@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+<!-- inherits from base.html file -->
 {% block content %}
 <div class="card">
   <div class="card-body">
       <div class="information" style="padding: 10px;">
           <h1 style="text-align:center">You are now logged in!</h1>
           <h2><a href="{% url 'companys:all'%}">Go to Companies</a></h2>
+          <!-- Using url pattern to go to the correct url file of companies urls.py -->
       </div>
   </div>
 </div>

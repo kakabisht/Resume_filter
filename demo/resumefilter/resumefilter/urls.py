@@ -18,8 +18,10 @@ from django.urls import path, include
 from . import views 
  
 
-
 urlpatterns = [
+    # As as_view is used to display form as a view, 
+    # classmethod as_view(**initkwargs)
+    # Returns a callable view that takes a request and returns a response: 
     path('', views.HomePage.as_view(), name="home"),
     path('about/', views.AboutPage.as_view(), name="about"),
     path('admin/', admin.site.urls),

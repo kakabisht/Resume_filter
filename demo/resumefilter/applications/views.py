@@ -19,15 +19,23 @@ User = get_user_model()
 
 
 class ApplicationList(SelectRelatedMixin, generic.ListView):
+    '''
+    List of all the applications using generic list view
+    '''
     model = models.Application
+    # Fields to be selected
     select_related = ("user", "company")
 
 
 class UserApplications(generic.ListView):
+    '''
+    All the applications filled by the user
+    '''
     model = models.Application
     template_name = "applications/user_application_list.html"
 
     def get_queryset(self):
+        # Try to fetch all the applications by a username field
         try:
             self.application_user = User.objects.prefetch_related("applications").get(username__iexact=self.kwargs.get("username"))
         except User.DoesNotExist:
@@ -42,10 +50,14 @@ class UserApplications(generic.ListView):
 
 
 class ApplicationDetail(SelectRelatedMixin, generic.DetailView):
+    '''
+    A detailed view of a particular application using Detail View
+    '''
     model = models.Application
     select_related = ("user", "company")
 
     def get_queryset(self):
+        #filering the application
         queryset = super().get_queryset()
         return queryset.filter(
             user__username__iexact=self.kwargs.get("username")
@@ -53,16 +65,18 @@ class ApplicationDetail(SelectRelatedMixin, generic.DetailView):
 
 
 class CreateApplication(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
-    # form_class = forms.ApplicationForm
+    '''
+    TO create a particular form, the user must be loged in and we use Create view 
+    '''
+
+    # Select the model and it's fields
     model = models.Application
     fields = ['user', 'company', 'email', 'github', 'linkedin', 'portfolio_site', 'resume', 'voice', 'message',]
-    
-    # def get_form_kwargs(self):
-    #     kwargs = super().get_form_kwargs()
-    #     kwargs.update({"user": self.request.user})
-    #     return kwargs
 
     def form_valid(self, form):
+        '''
+        To validate the fields as well as to save the form
+        '''
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
@@ -71,6 +85,11 @@ class CreateApplication(LoginRequiredMixin, SelectRelatedMixin, generic.CreateVi
 
 
 class DeleteApplication(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
+    '''
+    TO delete a particular form, the user must be loged in and we use Create view 
+    '''
+    
+    # Select the model and it's fields
     model = models.Application
     select_related = ("user", "company")
     success_url = reverse_lazy("applications:all")
@@ -80,8 +99,12 @@ class DeleteApplication(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteVi
         return queryset.filter(user_id=self.request.user.id)
 
     def delete(self, *args, **kwargs):
+        #delete the application form
         messages.success(self.request, "Application Deleted")
         return super().delete(*args, **kwargs)
 
 class Application_ThanksPage(TemplateView):
+    '''
+    When the user has logged out of the application
+    '''
     template_name = "applications/application_thanks.html"

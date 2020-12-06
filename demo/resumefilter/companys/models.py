@@ -26,23 +26,37 @@ class Company(models.Model):
     description_html = models.TextField(editable=False, default='', blank=True)
     members = models.ManyToManyField(User,through="CompanyMember")
 
-    def __str__(self):
+    def __str__(self):       
+        '''
+        For the admin side, to unique indentify each company name        
+        '''
         return self.name
 
     def save(self, *args, **kwargs):
+        '''
+        Saving the company details       
+        '''
         self.slug = slugify(self.name)
         self.description_html = misaka.html(self.description)
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
+        '''
+        Unique page for details of a company
+        '''
         return reverse("companys:single", kwargs={"slug": self.slug})
 
-
     class Meta:
+        '''
+        Sorting the companies by names        
+        '''
         ordering = ["name"]
 
 
 class CompanyMember(models.Model):
+    '''
+    Responsible for storing user and forms filled by the user for each company
+    '''
     company = models.ForeignKey(Company,related_name='memberships',on_delete=models.CASCADE)
     user = models.ForeignKey(User,related_name='user_companys',on_delete=models.CASCADE)
 
@@ -50,4 +64,7 @@ class CompanyMember(models.Model):
         return self.user.username
 
     class Meta:
+        '''
+        An applicant and a company must be unique together       
+        '''
         unique_together = ("company", "user")

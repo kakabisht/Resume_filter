@@ -3,7 +3,11 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class UserCreateForm(UserCreationForm):
+    '''
+    User creating a form, using inbuilt django module
+    '''
     class Meta:
+        #fields  for sign up page
         fields = ("username", "email", "password1", "password2")
         model = get_user_model()
 

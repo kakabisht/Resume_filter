@@ -1,6 +1,8 @@
 #   Software engineering project - Resume filter
 
-### My project is a software that will take soft skills(voice analysis) into account along with hard skills(resume, github profile, linkedin profile). It would reduce human effort and would provide better substitutes for the resume filtration process.
+### My project is a software that will take soft skills(voice analysis and text analysis) into account along with hard skills(resume, github profile, linkedin profile). It would reduce human effort and would provide better substitutes for the resume filtration process.
+
+I would personally recomend you make a virtual environment, and then run the application inside the environment.
 
 ##  Tech stack used:
 1. Django Framework 
@@ -10,18 +12,14 @@ This is Django framework based project, for folder structure i have used the str
 This is used for front end work on the applcation, we could further move on to react js library in the furture.
 
 3. Voice analysis API:
-[My-Voice-Analysis] (https://pypi.org/project/my-voice-analysis/) is a Python library for the analysis of voice (simultaneous speech, high entropy)
-without the need of a transcription.
+API Provider is [api.assemblyai.com](https://docs.assemblyai.com/overview/getting-started)
+
+4. Text analysis API:
+API Provider is [dandelion.eu](https://dandelion.eu/docs/api/datatxt/sent/v1/)
 
 ##  How to start the application:
 1. Open the resume filter directory
-2. In the terminal type python manage.py runserver
+2. Install all the requirements
+3. In the terminal type python manage.py runserver
 
-
-##  The future of this project could be
-1. Using Cloud storage options 
-2. Using Cloud services for voice analysis
-3. Using React JS library for front-end
-
-
-
+For information on [Django](https://programmerprodigy.code.blog/2020/07/09/basics-of-django-framework/)

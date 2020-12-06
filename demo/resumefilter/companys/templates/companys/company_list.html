@@ -1,8 +1,10 @@
 {% extends "companys/company_base.html" %}
-
+<!-- extends from company_base.html -->
 {% block precompany %}
+<!-- Inherits to precompany block in company_base.html -->
 <div class="col-md-4">
 	<div class="content">
+		<!-- If the user is authenticated, then he will see the apply button for companies -->
 		{% if user.is_authenticated %}
 		<h2>
 			Welcome back
@@ -22,10 +24,13 @@
 </div>
 {% endblock %}
 
+<!-- Displaying the list of companies -->
 {% block company_content %}
 <div class="col-md-8">
 	<div class="list-company">
+		<!-- Using SQl injection into html page -->
 		{% for company in object_list %}
+		<!-- For information on a particular company -->
 		<a href="{% url 'companys:single' slug=company.slug %}"
 		class="list-company-item list-company-item-action flex-column align-items-start">
 			<h3 class="mb-1">{{ company.name }}</h3>

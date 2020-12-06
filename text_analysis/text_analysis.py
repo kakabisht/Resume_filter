@@ -17,6 +17,7 @@ def get_sentiment(text, lang='en'):
     return response.json()
  
 if __name__ == '__main__':
-    query = "Hello, I am hridyesh singh bisht, and i am passionate about technology as i can get rich through it."
+    query = "Hi, i am hridyesh singh bisht.I am a junior at Symbiosis institute of technology and I am passionate about technology specifically around the cloud domain."
     response = get_sentiment(query)
+    print("The message sent to the API is {}".format(query))
     print(json.dumps(response, indent=4))

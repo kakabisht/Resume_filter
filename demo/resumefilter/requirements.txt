@@ -1,0 +1,16 @@
+dandelion-eu==0.3.2
+Django @ file:///tmp/build/80754af9/django_1605066529526/work
+django-bootstrap==0.2.4
+django-bootstrap4==2.3.1
+django-braces==1.14.0
+idna==2.10
+misaka==2.1.1
+my-voice-analysis==0.7
+python-dateutil==2.8.1
+pytz==2020.1
+requests==2.25.0
+scipy==1.5.4
+six==1.15.0
+soupsieve==2.0.1
+sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+urllib3==1.26.2
