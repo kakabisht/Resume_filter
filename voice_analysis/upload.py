@@ -17,7 +17,7 @@ def read_file(filename, chunk_size=5242880):
             yield data
  
 # Auth token 
-headers = {'authorization': "0f97c7d635494163b89cd968ec17ca3a"}
+headers = {'authorization': "API ID"}
 # Uploading the file to a cloud storage bucket
 response = requests.post('https://api.assemblyai.com/v2/upload', headers=headers, data=read_file(filename))
 

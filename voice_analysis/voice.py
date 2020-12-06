@@ -1,10 +1,10 @@
 import requests
 import json
 
-endpoint = "https://api.assemblyai.com/v2/transcript/1g8g4a97c-80a6-4740-9c5a-c8a8327fa090"
+endpoint = "end point"
 
 headers = {
-    "authorization": "0f97c7d635494163b89cd968ec17ca3a",
+    "authorization": "API id",
 }
 
 response = requests.get(endpoint, headers=headers)
