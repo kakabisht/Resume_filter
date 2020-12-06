@@ -3,7 +3,7 @@ Our application which takes into account all the information required by the rec
 The voice sample will be processed for parameters as audio_duration, confidence and text, and text sample will be processed for parameters as language used to analyze the text,  Sentiment score and type. 
 The form along with voice and text analysis will be available to the recruiter.
 
-## references usd
+## references used
 
 1. [Mozilla Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django) 
 2. [Django Docs](https://docs.djangoproject.com/en/3.1/)
